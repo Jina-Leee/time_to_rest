@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>슬기로운 학교생활</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;700&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		html{font-family: 'Noto Sans KR', sans-serif;}
+		body{margin: 0px;}
+		h1{padding-top: 100px;margin-bottom: 0px;font-size: 3em;}
+		.clockText{margin-top: 30px;margin-bottom: 40px;}
+		.abs{display: flex;}
+		.checkBox{width: 24px;border: 1px solid black;padding: 6px 6px;}
+		.className{width: 250px;border: 1px solid black;padding: 6px 6px;}
+		.time{width: 200px;border: 1px solid black;padding: 6px 6px;}
+		.place{width: 200px;border: 1px solid black;padding: 6px 6px;}
+		.daynight{width: 100px;border: 1px solid black;padding: 6px 6px;}
+		.gray{background: lightgray;}
+		.row{width: 800px;text-align: center;margin-left: 24vw;}
+		.clockText{font-size: 6.2em;font-weight: 700;}
+		.saveBut{margin-top: 50px;font-size: 1em;padding: 4px 8px;margin-bottom: 100px;}
+		#goodbyeGif{width: 80%;padding-bottom: 60px;}
+		
+	</style>
+</head>
+<body>
+	<div class="row">
+		<h1>수강신청 올클말고 휴학기원</h1>
+		<div id="clockDiv" class="clockText"></div>
+		
+		<!-- <button id="save" onclick="buttonAlert">저장</button> -->
+		<div>
+			<img src="goodbye.gif" id="goodbyeGif">
+		<!-- 	<iframe width="560" height="315" src="https://www.youtube.com/embed/RIMZ0pZh2uk?start=33" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			 -->
+		</div>
+		<div class="abs">
+			<div class="checkBox gray">
+				
+			</div>
+			<div class="className gray">
+				수업명
+			</div>
+			<div class="time gray">
+				수업 시간
+			</div>
+			<div class="place gray">
+				장소
+			</div>
+			<div class="daynight gray">
+				주야교차
+			</div>
+		</div>
+
+		<div class="abs">
+			<div class="checkBox">
+				<input type="checkbox" name="">
+			</div>
+			<div class="className">
+				수면의 이해
+			</div>
+			<div class="time">
+				월(1-9)
+			</div>
+			<div class="place">
+				침대 속
+			</div>
+			<div class="daynight">
+				Y
+			</div>
+		</div>
+
+		<div class="abs">
+			<div class="checkBox">
+				<input type="checkbox" name="">
+			</div>
+			<div class="className">
+				과제로부터의 해방
+			</div>
+			<div class="time">
+				매일
+			</div>
+			<div class="place">
+				제약 없음
+			</div>
+			<div class="daynight">
+				Y
+			</div>
+		</div>
+
+		<div class="abs">
+			<div class="checkBox">
+				<input type="checkbox" name="">
+			</div>
+			<div class="className">
+				건강의 중요성
+			</div>
+			<div class="time">
+				매일
+			</div>
+			<div class="place">
+				모든 세포와 장기
+			</div>
+			<div class="daynight">
+				Y
+			</div>
+		</div>
+
+		<div class="abs">
+			<div class="checkBox">
+				<input type="checkbox" name="">
+			</div>
+			<div class="className">
+				알코올에 취해
+			</div>
+			<div class="time">
+				금(10-12), 토, 일
+			</div>
+			<div class="place">
+				화려한 조명 아래
+			</div>
+			<div class="daynight">
+				Y
+			</div>
+		</div>
+
+		<input type="button" value="저 장" onclick="clickButton()" class="saveBut">
+
+	</div>
+
+	<script type="text/javascript">
+
+		function clock(){
+			var date = new Date();
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+			var seconds = date.getSeconds();
+			 clockDiv.innerHTML = hours + ':' + minutes + ':' + seconds;
+			 console.log(clockDiv.innerHTML);
+			}
+
+
+			function init(){
+				clock();
+				setInterval(clock, 1000);
+			}
+
+		init();
+
+		
+		function clickButton(){
+			alert('휴학이든 휴식이든 신청기간이 아닙니다. ' + '(현재 시간 : ' + clockDiv.innerHTML + ')' )
+		}
+	</script>
+
+</body>
+</html>
